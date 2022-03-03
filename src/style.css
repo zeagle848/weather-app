@@ -1,3 +1,211 @@
-.test-style {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;500;700&display=swap');
+
+:root {
+  --main-primary-color: rgb(187, 216, 240);
+  --main-lighter-primary-color: rgb(211, 234, 253);
+  --main-darker-primary-color: rgb(171, 202, 230);
+  --main-darkest-primary-color: rgb(132, 165, 194);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main-lighter-primary-color);
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* HEADER STYLING */
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main-primary-color);
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  border-bottom: solid 2px black;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 2px solid black;
+  margin-bottom: 0px;
+  padding-bottom: 20px;
+  flex: 0 1 auto;
+}
+
+.search-box {
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px;
+  width: 220px;
+  height: 30px;
+}
+
+.search-box:focus {
+  border: none;
+  outline: none;
+}
+
+.toggle-sign {
+  background-color: var(--main-primary-color);
+  width: 50px;
+  height: 40px;
+  border: solid 2px black;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 4px;
+  cursor: pointer;
+  margin-left: 40px;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: 0.3s;
+  background-color: var(--main-lighter-primary-color);
+  font-size: 20px;
+}
+
+.toggle-sign:hover {
+  transform: scale(1.1);
+}
+
+/* WEATHER CARD STYLING */
+
+.weather-card {
+  background-color: var(--main-lighter-primary-color);
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  transition: 0.3s;
+  margin-top: 20px;
+  width: 350px;
+  height: 400px;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 5px 5px black;
+}
+
+.weather-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.location {
+  font-size: 25px;
+  margin-right: 14px;
+  padding-left: 25px;
+}
+
+.weather-icon {
+  transform: scale(0.8);
+}
+
+.weather-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  padding-top: 15px;
+  max-height: 30px;
+  min-height: 30px;
+}
+
+.temperature-item-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 50px;
+}
+
+.min-max-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 9px;
+  font-size: 25px;
+}
+
+.feels-like-temp {
+  font-size: 60px;
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.weather-data {
+  padding-left: 20px;
+}
+
+/* SEVEN DAY FORECAST STYLING */
+
+.seven-day-forecast-container {
+  width: 1500px;
+  height: 200px;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  position: fixed;
+  bottom: 0;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forecast-card {
+  width: 180px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 3px;
+  background-color: var(--main-primary-color);
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px black;
+}
+
+.day-of-the-week {
+  font-size: 30px;
+  width: 100%;
+  display: block;
+  background-color: var(--main-lighter-primary-color);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: center;
+}
+
+.temperature-forecast-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.average-temp {
+  font-size: 35px;
 }

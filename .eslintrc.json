@@ -8,5 +8,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "no-shadow": "off",
+    "linebreak-style": 0,
+    "quotes": 0,
+    "comma-dangle": "off",
+    "no-alert": "off",
+    "no-restricted-globals": "off",
+    "import/prefer-default-export": "off"
+  }
 }

@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body id="body">
+  <body>
+    <header>
+      <h1 class="header">Weather App</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Search city..."
+          class="search-box"
+          id="search-box"
+        />
+        <span class="toggle-sign">&#8457</span>
+      </div>
+    </header>
+    <div class="weather-card-container" id="weather-card-container">
+    </div>
+    <div class="seven-day-forecast-container" id="seven-day-forecast-container">
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
