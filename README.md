@@ -31,8 +31,7 @@ The application should be live on `http://localhost:8080/` if it doesn't open au
 This application was created as an introduction to using API's to create web apps. The theory leading up to building the applicaton included learning about callbacks, promises
 and async-await. The app itself uses promises specifically to manage its asynchronous fetching of the data provided by OpenWeatherMap. 
 
-The experiance of using an API for the first time was exciting and extremely interesting. The application itself is incredible lightweight compared to something like my [todo-list]
-(https://github.com/zeagle848/todo-list). There's not much HTML/CSS involved and the total amount of JS files are only 8. The beauty of it lies in its simplicity, and the very 
+The experiance of using an API for the first time was exciting and extremely interesting. The application itself is incredible lightweight compared to something like my [todo-list](https://github.com/zeagle848/todo-list). There's not much HTML/CSS involved and the total amount of JS files are only 8. The beauty of it lies in its simplicity, and the very 
 practical uses of it. 
 
 I specifically used 3 API's from OpenWeatherMap. The first is their [Current Weather API](https://openweathermap.org/current) used for getting the weather for the current
