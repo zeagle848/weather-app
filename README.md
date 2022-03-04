@@ -8,9 +8,7 @@
 
 ## Introduction
 
-This weather app was created as an assignment in the open-source web development course known as The Oding Project (TOP). The link to the assignment page can be found [here]
-(https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app). The application uses the weather API developed by [OpenWeatherMap]
-(https://openweathermap.org/);
+This weather app was created as an assignment in the open-source web development course known as The Oding Project (TOP). The link to the assignment page can be found [here](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app). The application uses the weather API developed by [OpenWeatherMap](https://openweathermap.org/);
 
 ## Getting Started
 
