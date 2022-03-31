@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Development Notes](#development-notes)
+- [Testing](#testing)
 
 ## Introduction
 
@@ -53,3 +54,12 @@ The user has the option to display the temperature units as either metric or imp
 to either celsius or fahrenheit. The values of both temperatures are not created when the user clicks the button however. They are calculated when the forecast items and weather card
 are rendered. They are then stored as data attributes on the DOM itself. This means we only have to calculate the two values once, rather than every time the user wants to 
 toggle from imperial to metric or visa versa. 
+
+
+## Testing
+
+### Unit Testing
+
+To run the unit tests we have to make sure all the dependencies are installed by running `npm install` in the console. 
+
+To test the unit tests we simply run `npm run test` in the console and the tests should run.
