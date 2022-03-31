@@ -6,6 +6,7 @@ function renderForecast({ listOfForecastItems, unit }) {
   const fragment = document.createDocumentFragment();
 
   listOfForecastItems.forEach((forecastItem) => {
+    // console.log(forecastItem);
     let metricAverageTemp;
     let imperialAverageTemp;
 

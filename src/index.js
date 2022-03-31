@@ -4,8 +4,10 @@ import renderForecast from './components/renderForecast';
 import { toggleTemp } from './utils/toggleTemp';
 import { fetchCurrentWeather } from './services/fetchCurrentWeather';
 import { fetchForecast } from './services/fetchForecast';
+import { loadCurrentWeather } from './utils/loadCurrentWeatherData';
+import { loadWeatherForecast } from './utils/loadWeatherForecast';
 
-const toggleTempButton = document.querySelector('.toggle-sign');
+const toggleTempButton = document.querySelector('.toggle-sign'); // Change to temperature
 
 toggleTempButton.addEventListener('click', (event) => {
   toggleTemp({ event, toggleTempButton });
@@ -26,19 +28,29 @@ locationInput.addEventListener('keypress', (event) => {
     if (location) {
       document.getElementById('weather-card').remove();
 
-      fetchCurrentWeather({ location, units: currentUnit }).then((response) => {
-        renderWeatherCard({
-          location,
-          weatherIconURL: `http://openweathermap.org/img/wn/${response.weatherIcon}@2x.png`,
-          feelsLikeTemp: response.currentTemp,
-          maxTemp: response.maxTemp,
-          minTemp: response.minTemp,
-          humidity: response.humidity,
-          sunrise: response.sunrise,
-          sunset: response.sunset,
-          unit: currentUnit,
-        });
-      });
+      loadCurrentWeather({ location, units: currentUnit }).then(
+        ({
+          currentTemp,
+          maxTemp,
+          minTemp,
+          humidity,
+          sunrise,
+          sunset,
+          weatherIcon,
+        }) => {
+          renderWeatherCard({
+            location,
+            weatherIconURL: `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`,
+            feelsLikeTemp: currentTemp,
+            maxTemp,
+            minTemp,
+            humidity,
+            sunrise,
+            sunset,
+            unit: currentUnit,
+          });
+        }
+      );
 
       const foreCastContainer = document.getElementById(
         'seven-day-forecast-container'
@@ -47,7 +59,7 @@ locationInput.addEventListener('keypress', (event) => {
         foreCastContainer.removeChild(foreCastContainer.firstChild);
       }
 
-      fetchForecast({ location, units: currentUnit }).then((response) => {
+      loadWeatherForecast({ location, units: currentUnit }).then((response) => {
         const foreCastArray = response;
         foreCastArray.shift();
         renderForecast({
@@ -63,30 +75,41 @@ locationInput.addEventListener('keypress', (event) => {
 
 function init() {
   locationInput.value = 'Cape Town';
-  fetchCurrentWeather({ location: 'Cape Town', units: 'metric' }).then(
-    (response) => {
+  loadCurrentWeather({ location: 'Cape Town', units: 'metric' }).then(
+    ({
+      weatherIcon,
+      currentTemp,
+      maxTemp,
+      minTemp,
+      humidity,
+      sunrise,
+      sunset,
+    }) => {
       renderWeatherCard({
         location: 'Cape Town',
-        weatherIconURL: `http://openweathermap.org/img/wn/${response.weatherIcon}@2x.png`,
-        feelsLikeTemp: response.currentTemp,
-        maxTemp: response.maxTemp,
-        minTemp: response.minTemp,
-        humidity: response.humidity,
-        sunrise: response.sunrise,
-        sunset: response.sunset,
+        weatherIconURL: `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`,
+        feelsLikeTemp: currentTemp,
+        maxTemp,
+        minTemp,
+        humidity,
+        sunrise,
+        sunset,
         unit: 'metric',
       });
     }
   );
 
-  fetchForecast({ location: 'Cape Town', units: 'metric' }).then((response) => {
-    const foreCastArray = response;
-    foreCastArray.shift();
-    renderForecast({
-      listOfForecastItems: foreCastArray,
-      unit: 'metric',
-    });
-  });
+  loadWeatherForecast({ location: 'Cape Town', units: 'metric' }).then(
+    (response) => {
+      const foreCastArray = response;
+      console.log(foreCastArray);
+      foreCastArray.shift();
+      renderForecast({
+        listOfForecastItems: foreCastArray,
+        unit: 'metric',
+      });
+    }
+  );
 }
 
 init();

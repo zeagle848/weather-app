@@ -1,17 +1,14 @@
-export function unixToDay(unixTimeStamp) {
-  const i = 0;
-  const data = { list: [{ dt: unixTimeStamp }] };
+const DAY_NAMES = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 
-  const days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
-  const dayNum = new Date(data.list[i].dt * 1000).getDay();
-  const result = days[dayNum];
-  return result;
+export function unixToDay(unixTimeStamp) {
+  const dayIndex = new Date(unixTimeStamp * 1000).getDay();
+  return DAY_NAMES[dayIndex];
 }

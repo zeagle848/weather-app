@@ -15,7 +15,9 @@ export function toggleTemp({ event, toggleTempButton }) {
   const metricMinTemp = minTempElem.getAttribute('data-metric-temp');
   const imperialMinTemp = minTempElem.getAttribute('data-imperial-temp');
 
-  const allAvgTempElems = [...document.querySelectorAll('.average-temp')];
+  const allAvgTempElems = Array.from(
+    document.querySelectorAll('.average-temp')
+  );
   const metricAvgTempsArray = allAvgTempElems.map((elem) =>
     elem.getAttribute('data-metric-temp')
   );
@@ -23,7 +25,9 @@ export function toggleTemp({ event, toggleTempButton }) {
     elem.getAttribute('data-imperial-temp')
   );
 
-  const allMinTempElems = [...document.querySelectorAll('.min-temp-forecast')];
+  const allMinTempElems = Array.from(
+    document.querySelectorAll('.min-temp-forecast')
+  );
   const metricMinTempsArray = allMinTempElems.map((elem) =>
     elem.getAttribute('data-metric-temp')
   );
